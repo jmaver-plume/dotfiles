@@ -10,5 +10,7 @@
 
 ## TODO
 
-* Add `oh-my-zsh`.
-* Add `.zshrc`.
+* Add homebrew packages.
+* Add terminator.
+* Add pretty oh-my-zsh.
+* Add improved .vimrc.
