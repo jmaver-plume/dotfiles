@@ -6,6 +6,7 @@
 
 - link:
     ~/.vimrc: vimrc
+    ~/.zshrc: zshrc
 
 - shell:
   - [sh pre-install.sh, Running pre installation script]
