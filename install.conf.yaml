@@ -7,6 +7,7 @@
 - link:
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
+    ~/.oh-my-zsh/custom/my_aliases.zsh: oh-my-zsh/custom/my_aliases.zsh
 
 - shell:
   - [sh pre-install.sh, Running pre installation script]
