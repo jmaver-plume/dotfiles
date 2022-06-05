@@ -1,5 +1,14 @@
 # dotfiles
 
+## Usage
+
+```
+cd ~/Documents/code
+git clone git@github.com:jmaver-plume/dotfiles.git .dotfiles
+cd .dotfilesc
+./install
+```
+
 ## Links
 
 * [Dotbot](https://github.com/anishathalye/dotbot): Dotbot makes installing your dotfiles as easy as git clone $url && cd dotfiles && ./install, even on a freshly installed system!
@@ -14,3 +23,5 @@
 * Add terminator.
 * Add pretty oh-my-zsh.
 * Add improved .vimrc.
+* Add nvm (and nodejs (and global packages?)).
+
