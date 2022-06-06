@@ -13,4 +13,5 @@
 - shell:
   - [sh install-oh-my-zsh.sh, Running oh-my-zsh installation script]
   - [sh install-nvm.sh, Running nvm installation script]
+  - [sh install-brew.sh, Running brew installation script]
   - [git submodule update --init --recursive, Installing submodules]
