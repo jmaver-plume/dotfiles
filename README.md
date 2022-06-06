@@ -23,5 +23,5 @@ cd .dotfilesc
 * Add terminator.
 * Add pretty oh-my-zsh.
 * Add improved .vimrc.
-* Add nvm (and nodejs (and global packages?)).
+* And nodejs (and global packages?).
 

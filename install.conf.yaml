@@ -11,5 +11,6 @@
     ~/.oh-my-zsh/custom/kubernetes.zsh: oh-my-zsh/custom/kubernetes.zsh
 
 - shell:
-  - [sh pre-install.sh, Running pre installation script]
+  - [sh install-oh-my-zsh.sh, Running oh-my-zsh installation script]
+  - [sh install-nvm.sh, Running nvm installation script]
   - [git submodule update --init --recursive, Installing submodules]
