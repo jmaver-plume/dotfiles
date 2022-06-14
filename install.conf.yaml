@@ -9,9 +9,13 @@
     ~/.zshrc: zshrc
     ~/.oh-my-zsh/custom/my_aliases.zsh: oh-my-zsh/custom/my_aliases.zsh
     ~/.oh-my-zsh/custom/kubernetes.zsh: oh-my-zsh/custom/kubernetes.zsh
+    ~/.oh-my-zsh/custom/aws.zsh: oh-my-zsh/custom/aws.zsh
 
 - shell:
   - [sh install-oh-my-zsh.sh, Running oh-my-zsh installation script]
   - [sh install-nvm.sh, Running nvm installation script]
-  - [sh install-brew.sh, Running brew installation script]
   - [git submodule update --init --recursive, Installing submodules]
+  -
+    command: sh install-brew.sh
+    stdout: true
+    description: Running brew installation script
