@@ -9,3 +9,5 @@ syntax on
 set smartindent
 set autoindent
 set number
+
+set ic

@@ -10,6 +10,7 @@
     ~/.oh-my-zsh/custom/my_aliases.zsh: oh-my-zsh/custom/my_aliases.zsh
     ~/.oh-my-zsh/custom/kubernetes.zsh: oh-my-zsh/custom/kubernetes.zsh
     ~/.oh-my-zsh/custom/aws.zsh: oh-my-zsh/custom/aws.zsh
+    ~/.oh-my-zsh/custom/history.zsh: oh-my-zsh/custom/history.zsh
 
 - shell:
   - [sh install-oh-my-zsh.sh, Running oh-my-zsh installation script]
