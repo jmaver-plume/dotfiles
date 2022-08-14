@@ -11,6 +11,7 @@
     ~/.oh-my-zsh/custom/kubernetes.zsh: oh-my-zsh/custom/kubernetes.zsh
     ~/.oh-my-zsh/custom/aws.zsh: oh-my-zsh/custom/aws.zsh
     ~/.oh-my-zsh/custom/history.zsh: oh-my-zsh/custom/history.zsh
+    ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: zsh-autosuggestions
 
 - shell:
   - [sh install-oh-my-zsh.sh, Running oh-my-zsh installation script]
