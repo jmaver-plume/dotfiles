@@ -13,6 +13,6 @@ _brew_install_package () {
   fi
 }
 
-for package in "jq" "fzf"; do
+for package in "jq" "fzf" "kcat" "autojump" "fd" "ripgrep"; do
   _brew_install_package "$package"
 done
