@@ -8,9 +8,11 @@
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.oh-my-zsh/custom/my_aliases.zsh: oh-my-zsh/custom/my_aliases.zsh
+    ~/.oh-my-zsh/custom/help.zsh: oh-my-zsh/custom/help.zsh
     ~/.oh-my-zsh/custom/kubernetes.zsh: oh-my-zsh/custom/kubernetes.zsh
     ~/.oh-my-zsh/custom/aws.zsh: oh-my-zsh/custom/aws.zsh
     ~/.oh-my-zsh/custom/history.zsh: oh-my-zsh/custom/history.zsh
+    ~/.oh-my-zsh/custom/docker.zsh: oh-my-zsh/custom/docker.zsh
     ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: zsh-autosuggestions
 
 - shell:

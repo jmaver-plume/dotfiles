@@ -42,3 +42,7 @@ _aws_session(){
 
 ## Aliases will call token creation function for various accounts
 alias default_token="_aws_session development us-west-2 $1"
+
+awsps () {
+  aws ssm get-parameter --with-decryption --name ${1} --query Parameter.Value --output text
+}
