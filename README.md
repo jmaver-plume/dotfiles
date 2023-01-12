@@ -19,6 +19,7 @@ cd .dotfilesc
 
 ## TODO
 
+* Fix script not working.
 * Add homebrew packages.
 * Add terminator.
 * Add pretty oh-my-zsh.
