@@ -1,4 +1,4 @@
-alias k="kubectl -n sobi"
+alias k="kubectl"
 
 k_attach_grep () {
   pod=$(k get pods --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}' | grep $1)
