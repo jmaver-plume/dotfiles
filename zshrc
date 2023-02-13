@@ -113,7 +113,10 @@ export NVM_DIR="$HOME/.nvm"
 # Load autocomplete
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
-source ~/.private.zsh
+PRIVATE_FILE=~/.private.zsh
+if [ -f "$PRIVATE_FILE" ]; then
+  source $PRIVATE_FILE
+fi
 export PATH="/usr/local/opt/kubernetes-cli@1.22/bin:$PATH"
 
 

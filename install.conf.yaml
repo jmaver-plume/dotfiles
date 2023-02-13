@@ -13,6 +13,7 @@
     ~/.oh-my-zsh/custom/aws.zsh: oh-my-zsh/custom/aws.zsh
     ~/.oh-my-zsh/custom/history.zsh: oh-my-zsh/custom/history.zsh
     ~/.oh-my-zsh/custom/docker.zsh: oh-my-zsh/custom/docker.zsh
+    ~/.oh-my-zsh/custom/git.zsh: oh-my-zsh/custom/git.zsh
     ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: zsh-autosuggestions
 
 - shell:

@@ -3,10 +3,3 @@ alias hgrep='history | grep'
 alias personal='cd ~/Documents/code/personal'
 alias iso_date='date -u +%Y-%m-%dT%H:%M:%SZ'
 
-function gc {
-  git commit -m $1
-}
-
-function gca {
-  git commit -a -m $1
-}
