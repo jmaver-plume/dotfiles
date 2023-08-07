@@ -10,9 +10,13 @@ _brew_install_package () {
     echo "$1 is already installed"
   else
     brew install $1 && echo "$1 is installed"
+    if [ "$1" == "fzf"]; then
+      $(brew --prefix)/opt/fzf/install
+    fi
   fi
 }
 
 for package in "jq" "fzf" "kcat" "autojump" "fd" "ripgrep"; do
   _brew_install_package "$package"
 done
+

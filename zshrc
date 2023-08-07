@@ -143,3 +143,9 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+copy_branch() {
+  git branch | grep \* | cut -d ' ' -f2 | tee >(pbcopy)
+}
