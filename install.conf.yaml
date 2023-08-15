@@ -5,8 +5,12 @@
 - clean: ['~']
 
 - link:
-    ~/.vimrc: vimrc
-    ~/.zshrc: zshrc
+    ~/.vimrc: 
+      path: vimrc
+      force: true
+    ~/.zshrc: 
+      path: zshrc
+      force: true
     ~/.oh-my-zsh/custom/my_aliases.zsh: oh-my-zsh/custom/my_aliases.zsh
     ~/.oh-my-zsh/custom/help.zsh: oh-my-zsh/custom/help.zsh
     ~/.oh-my-zsh/custom/kubernetes.zsh: oh-my-zsh/custom/kubernetes.zsh
