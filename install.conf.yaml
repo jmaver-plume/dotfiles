@@ -25,6 +25,6 @@
   - [sh install-nvm.sh, Running nvm installation script]
   - [git submodule update --init --recursive, Installing submodules]
   -
-    command: sh install-brew.sh
+    command: zsh install-brew.zsh
     stdout: true
     description: Running brew installation script

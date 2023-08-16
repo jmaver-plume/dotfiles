@@ -69,3 +69,6 @@ fi
 
 export PATH="/usr/local/opt/kubernetes-cli@1.22/bin:$PATH"
 setopt autocd
+
+# Setup thefuck
+eval $(thefuck --alias)
