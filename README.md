@@ -5,7 +5,7 @@
 ```
 cd ~/Documents/code
 git clone git@github.com:jmaver-plume/dotfiles.git .dotfiles
-cd .dotfilesc
+cd .dotfiles
 ./install
 ```
 
@@ -16,13 +16,3 @@ cd .dotfilesc
 * [crzysdrs/dotfiles](https://github.com/crzysdrs/dotfiles): Example of dotfiles configuration provided by writer of Dotbot.
 * [anishathalye/dotfiles](https://github.com/anishathalye/dotfiles): Example of dotfiles configuration from writer of Dotbot.
 * [iraquitan/dotfiles](https://github.com/iraquitan/iraquitan-dotfiles): Example of dotfiles configuration, which contains setting up `oh-my-zsh`.
-
-## TODO
-
-* Fix script not working.
-* Add homebrew packages.
-* Add terminator.
-* Add pretty oh-my-zsh.
-* Add improved .vimrc.
-* And nodejs (and global packages?).
-
