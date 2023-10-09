@@ -113,3 +113,8 @@ alias personal='cd ~/Documents/code/personal'
 
 # Display the current date in ISO 8601 format.
 alias iso_date='echo -n `date -u +%Y-%m-%dT%H:%M:%SZ`'
+
+# Make WebStorm launchable from CLI
+webstorm() {
+  open -na "WebStorm.app" --args "$1"
+}
