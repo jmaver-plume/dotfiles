@@ -120,3 +120,8 @@ alias iso_date='echo -n `date -u +%Y-%m-%dT%H:%M:%SZ`'
 webstorm() {
   open -na "WebStorm.app" --args "$1"
 }
+
+# Bat configuration
+# https://github.com/sharkdp/bat#customization
+BAT_THEME=ansi
+alias cat="bat"

@@ -55,6 +55,7 @@ main() {
     "thefuck"  
     "tldr"  
     "diff-so-fancy"  
+    "wget"
   )
 
   for package in "${packages[@]}"; do
