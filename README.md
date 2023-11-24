@@ -21,6 +21,13 @@ git submodule add https://github.com/zsh-users/zsh-syntax-highlighting.git
     ...other
     ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting: zsh-syntax-highlighting
 ```
+- Add plugin to `zshrc`.
+```
+plugins=(
+  ...other
+  zsh-syntax-highlighting
+)
+```
 - Run the install script.
 ```shell
 ./install

@@ -22,6 +22,7 @@ plugins=(
   zsh-autosuggestions
   git
   zsh-syntax-highlighting
+  zsh-you-should-use
 )
 
 # Source the main oh-my-zsh script.
