@@ -21,6 +21,7 @@ zstyle ':omz:update' mode auto      # Enable automatic updates without prompt
 plugins=(
   zsh-autosuggestions
   git
+  zsh-syntax-highlighting
 )
 
 # Source the main oh-my-zsh script.

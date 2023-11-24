@@ -15,6 +15,7 @@
     ~/.oh-my-zsh/custom/aws.zsh: oh-my-zsh/custom/aws.zsh
     ~/.oh-my-zsh/custom/git.zsh: oh-my-zsh/custom/git.zsh
     ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: zsh-autosuggestions
+    ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting: zsh-syntax-highlighting
 
 - shell:
   - [sh install-oh-my-zsh.sh, Running oh-my-zsh installation script]

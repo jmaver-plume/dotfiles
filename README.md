@@ -9,6 +9,23 @@ cd .dotfiles
 ./install
 ```
 
+### How to add a new git submodule zsh package
+
+- Add a git submodule.
+```shell
+git submodule add https://github.com/zsh-users/zsh-syntax-highlighting.git
+```
+- Add link to `install.conf.yaml`.
+```
+- link:
+    ...other
+    ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting: zsh-syntax-highlighting
+```
+- Run the install script.
+```shell
+./install
+```
+
 ## Links
 
 * [Dotbot](https://github.com/anishathalye/dotbot): Dotbot makes installing your dotfiles as easy as git clone $url && cd dotfiles && ./install, even on a freshly installed system!
