@@ -1,5 +1,15 @@
 # Changelog
 
+## [3.1.0](https://github.com/jmaver-plume/dotfiles/compare/v3.0.0...v3.1.0) (2023-11-24)
+
+
+### Features
+
+* Add additional packages and improve iterm colors ([cdaaac0](https://github.com/jmaver-plume/dotfiles/commit/cdaaac06e0aeb15ac8a5cbcaaf9d4de647cefc06))
+* Add webstorm command ([ece2ad6](https://github.com/jmaver-plume/dotfiles/commit/ece2ad6da86cb7c457eb133253522a45cdfbcd19))
+* Install zsh-syntax-highlighting ([2bf434b](https://github.com/jmaver-plume/dotfiles/commit/2bf434beddd6f8b37f9c999d1b8a550a1a541a58))
+* Install zsh-you-should-use ([8401b82](https://github.com/jmaver-plume/dotfiles/commit/8401b823eaff984a21f95bdcba378778abec0bae))
+
 ## [3.0.0](https://github.com/jmaver-plume/dotfiles/compare/v2.0.0...v3.0.0) (2023-08-17)
 
 
