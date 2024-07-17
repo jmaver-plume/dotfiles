@@ -6,10 +6,10 @@
 
 - link:
     ~/.vimrc:
-      path: vimrc
+      path: .vimrc
       force: true
     ~/.zshrc:
-      path: zshrc
+      path: .zshrc
       force: true
     ~/.oh-my-zsh/custom/kubernetes.zsh: oh-my-zsh/custom/kubernetes.zsh
     ~/.oh-my-zsh/custom/aws.zsh: oh-my-zsh/custom/aws.zsh

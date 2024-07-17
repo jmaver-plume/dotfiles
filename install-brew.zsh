@@ -43,18 +43,15 @@ main() {
 
   # List of packages
   local packages=(
-    "jq" 
-    "fzf" 
-    "kcat" 
-    "autojump" 
-    "fd" 
-    "ripgrep" 
-    "MonitorControl" 
-    "bat" 
-    "exa" 
-    "thefuck"  
-    "tldr"  
-    "diff-so-fancy"  
+    "jq"
+    "fzf"
+    "autojump"
+    "ripgrep"
+    "MonitorControl"
+    "bat"
+    "thefuck"
+    "tldr"
+    "diff-so-fancy"
     "wget"
   )
 

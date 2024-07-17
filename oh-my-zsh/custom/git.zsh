@@ -13,17 +13,17 @@ git config --global interactive.diffFilter "diff-so-fancy --patch"
 # Custom Git Functions
 # -----------------------
 
-# copy_branch
+# gcpbranch
 # Copies the current git branch name to the clipboard.
-# Usage: copy_branch_name
-copy_branch_name() {
+# Usage: gcpbranch
+gcpbranch() {
   git branch | grep \* | cut -d ' ' -f2 | tee >(pbcopy)
 }
 
-# reset_integration_branch
+# greset
 # Resets the local 'integration' branch to match the remote 'origin/integration' branch.
-# Usage: reset_integration_branch
-reset_integration_branch() {
+# Usage: greset
+greset() {
   git fetch -a || { echo "Fetch failed, aborting"; return 1; }
   git checkout integration || { echo "Checkout failed, aborting"; return 1; }
   git reset --hard origin/integration || { echo "Reset failed, aborting"; return 1; }

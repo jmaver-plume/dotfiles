@@ -5,19 +5,19 @@
 # Alias for 'kubectl' command for brevity.
 alias k="kubectl"
 
-# k_attach_grep
+# kattach
 # Attach to the first pod that matches the given pattern and start a bash session.
-# Usage: k_attach_grep <pattern>
-k_attach_grep() {
+# Usage: kattach <pattern>
+kattach() {
   local pod
   pod=$(k get pods --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}' | grep $1 | head -n 1)
   k exec --stdin --tty $pod -- /bin/bash
 }
 
-# k_logs_grep
+# klogs
 # Tail logs of the deployment that matches the given pattern.
-# Usage: k_logs_grep <pattern>
-k_logs_grep() {
+# Usage: klogs <pattern>
+klogs() {
   local service
   service=$(k get deployments --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}' | grep $1)
   k logs "deployment.apps/$service" -f --all-containers

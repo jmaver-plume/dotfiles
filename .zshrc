@@ -124,4 +124,3 @@ webstorm() {
 # Bat configuration
 # https://github.com/sharkdp/bat#customization
 BAT_THEME=ansi
-alias cat="bat"
