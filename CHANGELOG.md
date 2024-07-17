@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.1.0](https://github.com/jmaver-plume/dotfiles/compare/v3.0.0...v3.1.0) (2024-07-17)
+
+
+### Features
+
+* Add additional packages and improve iterm colors ([cdaaac0](https://github.com/jmaver-plume/dotfiles/commit/cdaaac06e0aeb15ac8a5cbcaaf9d4de647cefc06))
+* Add raycast command template ([e35fbab](https://github.com/jmaver-plume/dotfiles/commit/e35fbab8852117aa542c25ecd5f0171c49dd5024))
+* Add webstorm command ([ece2ad6](https://github.com/jmaver-plume/dotfiles/commit/ece2ad6da86cb7c457eb133253522a45cdfbcd19))
+* Install zsh-syntax-highlighting ([2bf434b](https://github.com/jmaver-plume/dotfiles/commit/2bf434beddd6f8b37f9c999d1b8a550a1a541a58))
+* Install zsh-you-should-use ([8401b82](https://github.com/jmaver-plume/dotfiles/commit/8401b823eaff984a21f95bdcba378778abec0bae))
+* minor changes ([c185c8f](https://github.com/jmaver-plume/dotfiles/commit/c185c8f17647b92ad68610d9c9e956050c75c06a))
+* Update dependencies ([8ed4c72](https://github.com/jmaver-plume/dotfiles/commit/8ed4c72e51f5708c6b3fc2fae20236511ca9fe07))
+
+
+### Bug Fixes
+
+* broken dotbot ref ([c1b0736](https://github.com/jmaver-plume/dotfiles/commit/c1b0736c3d4a97f0b966883c99f532afbcfe02ef))
+
 ## [3.0.0](https://github.com/jmaver-plume/dotfiles/compare/v2.0.0...v3.0.0) (2023-08-17)
 
 
