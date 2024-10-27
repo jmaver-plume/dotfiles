@@ -20,9 +20,7 @@ zstyle ':omz:update' mode auto      # Enable automatic updates without prompt
 # Note: Excessive plugins can slow down shell startup.
 plugins=(
   zsh-autosuggestions
-  git
   zsh-syntax-highlighting
-  zsh-you-should-use
 )
 
 # Source the main oh-my-zsh script.
@@ -43,7 +41,22 @@ export NVM_DIR="$HOME/.nvm"
 # More info: https://github.com/nvm-sh/nvm#zsh
 autoload -U add-zsh-hook
 load-nvmrc() {
-  # ... [content unchanged]
+  local nvmrc_path
+  nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version
+    nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
+      nvm use
+    fi
+  elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
@@ -82,15 +95,12 @@ fi
 # Add the specified kubernetes-cli version to the PATH.
 export PATH="/usr/local/opt/kubernetes-cli@1.22/bin:$PATH"
 
-# Enable auto-directory change without the need for 'cd'.
-setopt autocd
-
 # -----------------------
 # TheFuck Configuration
 # -----------------------
 
 # Initialize thefuck, a magnificent app to correct previous console command.
-eval $(thefuck --alias)
+eval $(thefuck --alias typo)
 
 # -----------------------
 # History Configuration
@@ -107,12 +117,6 @@ setopt SHARE_HISTORY           # Share command history across terminals.
 # Generic Aliases
 # -----------------------
 
-# Search through command history with fzf.
-alias hist='history | fzf'
-
-# Quick navigation to personal code directory.
-alias personal='cd ~/Documents/code/personal'
-
 # Display the current date in ISO 8601 format.
 alias iso_date='echo -n `date -u +%Y-%m-%dT%H:%M:%SZ`'
 
@@ -124,3 +128,9 @@ webstorm() {
 # Bat configuration
 # https://github.com/sharkdp/bat#customization
 BAT_THEME=ansi
+
+# Alias for 'git' command for brevity.
+alias g="git"
+
+# Alias for 'kubectl' command for brevity.
+alias k="kubectl"
