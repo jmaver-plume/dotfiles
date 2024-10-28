@@ -68,6 +68,10 @@ load-nvmrc
 # Initialize Homebrew environment variables.
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# -----------------------
+# Autojump Configuration
+# -----------------------
+
 # Load autojump, a directory navigation tool.
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
@@ -95,12 +99,23 @@ fi
 # Add the specified kubernetes-cli version to the PATH.
 export PATH="/usr/local/opt/kubernetes-cli@1.22/bin:$PATH"
 
+# Add the user's bin directory to the PATH.
+export PATH="$HOME/bin:$PATH"
+
 # -----------------------
 # TheFuck Configuration
 # -----------------------
 
 # Initialize thefuck, a magnificent app to correct previous console command.
-eval $(thefuck --alias typo)
+eval $(thefuck --alias)
+
+# -----------------------
+# TheFuck Configuration
+# -----------------------
+
+# https://github.com/sharkdp/bat#customization
+BAT_THEME=ansi
+
 
 # -----------------------
 # History Configuration
@@ -114,20 +129,20 @@ setopt EXTENDED_HISTORY        # Save timestamp of command execution.
 setopt SHARE_HISTORY           # Share command history across terminals.
 
 # -----------------------
-# Generic Aliases
+# WebStorm Configuration
 # -----------------------
-
-# Display the current date in ISO 8601 format.
-alias iso_date='echo -n `date -u +%Y-%m-%dT%H:%M:%SZ`'
 
 # Make WebStorm launchable from CLI
 webstorm() {
   open -na "WebStorm.app" --args "$1"
 }
 
-# Bat configuration
-# https://github.com/sharkdp/bat#customization
-BAT_THEME=ansi
+# -----------------------
+# Generic Aliases
+# -----------------------
+
+# Display the current date in ISO 8601 format.
+alias iso_date='echo -n `date -u +%Y-%m-%dT%H:%M:%SZ`'
 
 # Alias for 'git' command for brevity.
 alias g="git"
