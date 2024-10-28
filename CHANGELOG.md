@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.2.0](https://github.com/jmaver-plume/dotfiles/compare/v3.1.0...v3.2.0) (2024-10-28)
+
+
+### Features
+
+* **git:** add custom functions ([9f35faa](https://github.com/jmaver-plume/dotfiles/commit/9f35faac6ef61f993ff2b28ab8a6f63799fb7485))
+* Remove unused features ([ae0f195](https://github.com/jmaver-plume/dotfiles/commit/ae0f195b1f0039d7ed05b9e3273b21512e962a2f))
+
 ## [3.1.0](https://github.com/jmaver-plume/dotfiles/compare/v3.0.0...v3.1.0) (2024-07-17)
 
 
