@@ -51,6 +51,18 @@ if [ -f "$PRIVATE_FILE" ]; then
   source $PRIVATE_FILE
 fi
 
+# Source work-specific private zsh configurations if the file exists.
+PRIVATE_WORK_FILE=~/.private-work.zsh
+if [ -f "$PRIVATE_WORK_FILE" ]; then
+  source $PRIVATE_WORK_FILE
+fi
+
+# Source home-specific private zsh configurations if the file exists.
+PRIVATE_HOME_FILE=~/.private-home.zsh
+if [ -f "$PRIVATE_HOME_FILE" ]; then
+  source $PRIVATE_HOME_FILE
+fi
+
 # -----------------------
 # FZF Configuration
 # -----------------------
@@ -90,11 +102,11 @@ webstorm() {
 }
 
 # -----------------------
-# Generic Aliases
+# Other
 # -----------------------
 
 # Display the current date in ISO 8601 format.
-alias iso_date='echo -n `date -u +%Y-%m-%dT%H:%M:%SZ`'
+alias isodate='echo -n `date -u +%Y-%m-%dT%H:%M:%SZ`'
 
 # Alias for 'git' command for brevity.
 alias g="git"
