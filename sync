@@ -31,6 +31,42 @@ else
     echo "Already installed: oh-my-zsh"
 fi
 
+# Install Homebrew if not installed
+if ! command -v brew &> /dev/null; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    echo "Installed: homebrew"
+else
+    echo "Already installed: homebrew"
+fi
+
+# Install Homebrew packages
+packages=(
+  "jq"
+  "fzf"
+  "zoxide"
+  "ripgrep"
+  "MonitorControl"
+  "tldr"
+  "wget"
+  "diff-so-fancy"
+  "nvim"
+)
+for package in "${packages[@]}"; do
+    if brew list "$package" &> /dev/null; then
+        echo "Already installed: $package"
+        continue
+    fi
+
+    # Install the package
+    brew install "$package" && echo "Installed: $package"
+
+    # Additional setup for specific packages
+    if [[ "$package" == "fzf" ]]; then
+      $(brew --prefix)/opt/fzf/install
+    fi
+done
+
+
 # Update git submodules
 git submodule update --init --recursive
 echo "Updated: git submodules"
@@ -44,9 +80,5 @@ create_symlink "zsh-nvm" "$HOME/.oh-my-zsh/custom/plugins/zsh-nvm"
 create_symlink "zsh-autosuggestions" "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
 create_symlink "zsh-syntax-highlighting" "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
 create_symlink "kickstart.nvim" "$HOME/.config/nvim"
-
-# Install brew and brew packages
-zsh install-brew.zsh
-echo "Installed: brew and brew packages"
 
 echo "Done!"
