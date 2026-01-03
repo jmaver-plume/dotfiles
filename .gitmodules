@@ -13,3 +13,6 @@
 [submodule "zsh-you-should-use"]
 	path = zsh-you-should-use
 	url = https://github.com/MichaelAquilina/zsh-you-should-use.git
+[submodule "fzf-tab"]
+	path = fzf-tab
+	url = https://github.com/Aloxaf/fzf-tab

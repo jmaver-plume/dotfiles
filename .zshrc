@@ -31,6 +31,7 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-you-should-use
+  fzf-tab
 )
 
 # Source the main oh-my-zsh script.

@@ -50,6 +50,7 @@ packages=(
   "wget"
   "diff-so-fancy"
   "nvim"
+  "bat"
 )
 for package in "${packages[@]}"; do
     if brew list "$package" &> /dev/null; then
@@ -66,7 +67,6 @@ for package in "${packages[@]}"; do
     fi
 done
 
-
 # Update git submodules
 git submodule update --init --recursive
 echo "Updated: git submodules"
@@ -81,6 +81,7 @@ create_symlink "zsh-nvm" "$HOME/.oh-my-zsh/custom/plugins/zsh-nvm"
 create_symlink "zsh-autosuggestions" "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
 create_symlink "zsh-syntax-highlighting" "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
 create_symlink "zsh-you-should-use" "$HOME/.oh-my-zsh/custom/plugins/zsh-you-should-use"
+create_symlink "fzf-tab" "$HOME/.oh-my-zsh/custom/plugins/fzf-tab"
 create_symlink "kickstart.nvim" "$HOME/.config/nvim"
 
 echo "Done!"
