@@ -5,6 +5,14 @@
 # Specify the path to the oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# -----------------------
+# Zsh Autosuggestions Configuration
+# -----------------------
+
+# Set the highlight style for autosuggestions (must be set before loading plugins)
+# Use a dimmed/gray color for suggestions
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
+
 # Set the theme for oh-my-zsh.
 # For a random theme each session, set to "random".
 # To identify the random theme loaded, use: echo $RANDOM_THEME
@@ -22,6 +30,7 @@ plugins=(
   zsh-nvm
   zsh-autosuggestions
   zsh-syntax-highlighting
+  zsh-you-should-use
 )
 
 # Source the main oh-my-zsh script.
@@ -106,7 +115,7 @@ webstorm() {
 # -----------------------
 
 # Display the current date in ISO 8601 format.
-alias isodate='echo -n `date -u +%Y-%m-%dT%H:%M:%SZ`'
+alias now='echo -n `date -u +%Y-%m-%dT%H:%M:%SZ`'
 
 # Alias for 'git' command for brevity.
 alias g="git"

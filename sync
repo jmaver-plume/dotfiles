@@ -74,11 +74,13 @@ echo "Updated: git submodules"
 # Create symbolic links
 create_symlink ".hushlogin" "$HOME/.hushlogin"
 create_symlink ".zshrc" "$HOME/.zshrc"
+create_symlink "ghostty" "$HOME/.config/ghostty/config"
 create_symlink "oh-my-zsh/custom/aws.zsh" "$HOME/.oh-my-zsh/custom/aws.zsh"
 create_symlink "oh-my-zsh/custom/git.zsh" "$HOME/.oh-my-zsh/custom/git.zsh"
 create_symlink "zsh-nvm" "$HOME/.oh-my-zsh/custom/plugins/zsh-nvm"
 create_symlink "zsh-autosuggestions" "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
 create_symlink "zsh-syntax-highlighting" "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+create_symlink "zsh-you-should-use" "$HOME/.oh-my-zsh/custom/plugins/zsh-you-should-use"
 create_symlink "kickstart.nvim" "$HOME/.config/nvim"
 
 echo "Done!"

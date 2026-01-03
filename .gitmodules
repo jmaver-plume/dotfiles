@@ -10,3 +10,6 @@
 [submodule "kickstart.nvim"]
 	path = kickstart.nvim
 	url = git@github.com:jmaver-plume/kickstart.nvim.git
+[submodule "zsh-you-should-use"]
+	path = zsh-you-should-use
+	url = https://github.com/MichaelAquilina/zsh-you-should-use.git
