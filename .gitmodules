@@ -7,3 +7,6 @@
 [submodule "zsh-nvm"]
 	path = zsh-nvm
 	url = https://github.com/lukechilds/zsh-nvm.git
+[submodule "kickstart.nvim"]
+	path = kickstart.nvim
+	url = git@github.com:jmaver-plume/kickstart.nvim.git

@@ -33,6 +33,7 @@ local packages=(
   "tldr"
   "wget"
   "diff-so-fancy"
+  "nvim"
 )
 for package in "${packages[@]}"; do
     install_package "$package"
