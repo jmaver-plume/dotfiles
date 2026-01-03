@@ -3,10 +3,9 @@
 ## Usage
 
 ```
-cd ~/Documents/code
-git clone git@github.com:jmaver-plume/dotfiles.git .dotfiles
-cd .dotfiles
-./install
+git clone git@github.com:jmaver-plume/dotfiles.git
+cd dotfiles
+./sync
 ```
 
 ### How to add a new git submodule zsh package

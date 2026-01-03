@@ -19,47 +19,13 @@ zstyle ':omz:update' mode auto      # Enable automatic updates without prompt
 # Specify plugins to be loaded by oh-my-zsh.
 # Note: Excessive plugins can slow down shell startup.
 plugins=(
+  zsh-nvm
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
 
 # Source the main oh-my-zsh script.
 source $ZSH/oh-my-zsh.sh
-
-# -----------------------
-# NVM (Node Version Manager) Configuration
-# -----------------------
-
-# Specify the path to the NVM installation.
-export NVM_DIR="$HOME/.nvm"
-
-# Load NVM and its bash completion.
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-# Automatically switch Node.js version based on .nvmrc file in directory.
-# More info: https://github.com/nvm-sh/nvm#zsh
-autoload -U add-zsh-hook
-load-nvmrc() {
-  local nvmrc_path
-  nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version
-    nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
-      nvm use
-    fi
-  elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
 
 # -----------------------
 # Homebrew Configuration
@@ -69,11 +35,11 @@ load-nvmrc
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # -----------------------
-# Autojump Configuration
+# Zoxide Configuration
 # -----------------------
 
-# Load autojump, a directory navigation tool.
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+# Initialize zoxide, a smarter cd command.
+eval "$(zoxide init zsh)"
 
 # -----------------------
 # Private Configuration
@@ -100,21 +66,7 @@ fi
 export PATH="/usr/local/opt/kubernetes-cli@1.22/bin:$PATH"
 
 # Add the user's bin directory to the PATH.
-export PATH="$HOME/bin:$PATH"
-
-# -----------------------
-# TheFuck Configuration
-# -----------------------
-
-# Initialize thefuck, a magnificent app to correct previous console command.
-eval $(thefuck --alias)
-
-# -----------------------
-# TheFuck Configuration
-# -----------------------
-
-# https://github.com/sharkdp/bat#customization
-BAT_THEME=ansi
+export PATH="$HOME/bin:$HOME/bin/zx:$PATH"
 
 
 # -----------------------
@@ -149,3 +101,10 @@ alias g="git"
 
 # Alias for 'kubectl' command for brevity.
 alias k="kubectl"
+
+# Load user-specific environment variables
+. "$HOME/.local/bin/env"
+
+# Java 17 Configuration
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home"
