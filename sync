@@ -36,6 +36,7 @@ git submodule update --init --recursive
 echo "Updated: git submodules"
 
 # Create symbolic links
+create_symlink ".hushlogin" "$HOME/.hushlogin"
 create_symlink ".zshrc" "$HOME/.zshrc"
 create_symlink "oh-my-zsh/custom/aws.zsh" "$HOME/.oh-my-zsh/custom/aws.zsh"
 create_symlink "oh-my-zsh/custom/git.zsh" "$HOME/.oh-my-zsh/custom/git.zsh"
