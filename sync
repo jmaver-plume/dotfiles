@@ -48,9 +48,9 @@ packages=(
   "MonitorControl"
   "tldr"
   "wget"
-  "diff-so-fancy"
   "nvim"
   "bat"
+  "git-delta"
 )
 for package in "${packages[@]}"; do
     if brew list "$package" &> /dev/null; then

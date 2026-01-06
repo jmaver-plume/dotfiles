@@ -6,8 +6,13 @@
 git config --global --add --bool push.autoSetupRemote true
 
 # Configure git to use diff-so-fancy for better 'git diff' visualization.
-git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
-git config --global interactive.diffFilter "diff-so-fancy --patch"
+git config --global core.pager delta
+git config --global interactive.diffFilter 'delta --color-only'
+git config --global delta.navigate true
+git config --global delta.side-by-side true
+git config --global delta.hunk-header-style raw
+git config --global delta.hunk-header-decoration-style ul
+git config --global merge.conflictStyle zdiff3
 
 
 # -----------------------
