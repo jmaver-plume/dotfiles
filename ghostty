@@ -43,5 +43,5 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
-theme = Primary
+theme = dark:Atom One Dark,light:Primary
 maximize = true

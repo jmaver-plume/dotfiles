@@ -51,6 +51,7 @@ packages=(
   "nvim"
   "bat"
   "git-delta"
+  "hurl"
 )
 for package in "${packages[@]}"; do
     if brew list "$package" &> /dev/null; then
