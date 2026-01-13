@@ -87,8 +87,11 @@ fi
 # Add the specified kubernetes-cli version to the PATH.
 export PATH="/usr/local/opt/kubernetes-cli@1.22/bin:$PATH"
 
-# Add the user's bin directory to the PATH.
-export PATH="$HOME/bin:$HOME/bin/zx:$PATH"
+# -----------------------
+# BAT Configuration
+# -----------------------
+# https://github.com/sharkdp/bat#customization
+BAT_THEME=ansi
 
 
 # -----------------------
@@ -103,7 +106,7 @@ setopt EXTENDED_HISTORY        # Save timestamp of command execution.
 setopt SHARE_HISTORY           # Share command history across terminals.
 
 # -----------------------
-# WebStorm Configuration
+# JetBrains Configuration
 # -----------------------
 
 # Make WebStorm launchable from CLI
@@ -111,8 +114,21 @@ webstorm() {
   open -na "WebStorm.app" --args "$1"
 }
 
+# Make IntelliJ launchable from CLI
+idea() {
+  open -na "IntelliJ IDEA Community Edition.app" --args "$1"
+}
+
 # -----------------------
-# Other
+# Java Configuration
+# -----------------------
+
+# Java 17 Configuration
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home"
+
+# -----------------------
+# Generic Aliases
 # -----------------------
 
 # Display the current date in ISO 8601 format.
@@ -124,9 +140,5 @@ alias g="git"
 # Alias for 'kubectl' command for brevity.
 alias k="kubectl"
 
-# Load user-specific environment variables
-. "$HOME/.local/bin/env"
-
-# Java 17 Configuration
-export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
-export JAVA_HOME="/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home"
+# google/zx aliases
+alias psync="sync-repositories.mjs --directory '/Users/jmaver/git/code/plume-repositories'"

@@ -8,16 +8,16 @@ DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 create_symlink() {
     local source="$1"
     local target="$2"
-    
+
     [[ "$source" != /* ]] && source="$DOTFILES_DIR/$source"
-    
+
     [ ! -e "$source" ] && echo "Source does not exist: $source" && return 1
-    
+
     if [ -L "$target" ] && [ "$(readlink "$target")" = "$source" ]; then
         echo "Already linked: $target"
         return 0
     fi
-    
+
     mkdir -p "$(dirname "$target")"
     ln -sf "$source" "$target"
     echo "Linked: $target"
@@ -52,6 +52,7 @@ packages=(
   "bat"
   "git-delta"
   "hurl"
+  "ghostty"
 )
 for package in "${packages[@]}"; do
     if brew list "$package" &> /dev/null; then
