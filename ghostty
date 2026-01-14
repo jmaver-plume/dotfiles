@@ -43,5 +43,5 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
-theme = dark:Catppuccin Macchiato,light:Catpuccin Latte
+theme = dark:Catppuccin Macchiato,light:Catppuccin Latte
 maximize = true
