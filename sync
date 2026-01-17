@@ -75,6 +75,7 @@ echo "Updated: git submodules"
 
 # Create symbolic links
 create_symlink ".hushlogin" "$HOME/.hushlogin"
+create_symlink ".ideavimrc" "$HOME/.ideavimrc"
 create_symlink ".zshrc" "$HOME/.zshrc"
 create_symlink "ghostty" "$HOME/.config/ghostty/config"
 create_symlink "oh-my-zsh/custom/aws.zsh" "$HOME/.oh-my-zsh/custom/aws.zsh"
