@@ -45,7 +45,6 @@ packages=(
   "fzf"
   "zoxide"
   "ripgrep"
-  "MonitorControl"
   "tldr"
   "wget"
   "nvim"
