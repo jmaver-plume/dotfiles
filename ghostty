@@ -45,3 +45,5 @@
 
 theme = dark:Catppuccin Macchiato,light:Catppuccin Latte
 maximize = true
+cursor-style = block
+shell-integration-features = no-cursor
