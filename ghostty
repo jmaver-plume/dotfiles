@@ -47,3 +47,5 @@ theme = dark:Catppuccin Macchiato,light:Catppuccin Latte
 maximize = true
 cursor-style = block
 shell-integration-features = no-cursor
+unfocused-split-opacity = 0.85
+unfocused-split-fill = "#1e1e1e"
