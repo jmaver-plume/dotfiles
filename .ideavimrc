@@ -5,10 +5,14 @@
 "" ========================================================
 " ignorecase: case-insensitive search by default
 set ignorecase
+
 " smartcase: enable case-sensitive search if pattern has uppercase
 set smartcase
+
 " incsearch: show matches while typing
-set incsearch
+" disabled, because it lags in large files
+" set incsearch
+
 " hlsearch: highlight matches after search
 set hlsearch
 
@@ -42,49 +46,78 @@ let mapleader = " "
 nmap <Leader>gb <Action>(Git.Branches)
 nmap <Leader>gn <Action>(Git.CreateNewBranch)
 
-
 "" ========================================================
 "" Run Mappings
 "" ========================================================
 nmap <Leader>r <Action>(Run)
 
 "" ========================================================
-"" Debug Mappings
+"" Debug/Run Mappings
 "" ========================================================
-nmap <Leader>d <Action>(Debug)
+"" Execute
+nmap <leader>xr <Action>(Run)
+nmap <leader>xd <Action>(Debug)
+nmap <leader>xR <Action>(ContextRun)
+nmap <leader>xD <Action>(ContextDebug)
+
+"" Debug
+nmap <leader>dt <Action>(ToggleLineBreakpoint)
+nmap <leader>dx <Action>(Resume)
+nmap <leader>dn <Action>(StepOver)
+nmap <leader>di <Action>(StepInto)
+nmap <leader>do <Action>(StepOut)
+nmap <leader>dC <Action>(RunToCursor)
+nmap <leader>dv <Action>(ViewBreakpoints)
+nmap <leader>de <Action>(EditBreakpoint)
 
 "" ========================================================
 "" Navigation Mappings
 "" ========================================================
 " Go to definition/references (match kickstart.nvim)
-nmap grd <Action>(GotoDeclaration)
-nmap grr <Action>(FindUsages)
+nmap <leader>rg <Action>(GotoDeclaration)
+nmap <leader>rs <Action>(ShowUsages)
+nmap <leader>rf <Action>(FindUsages)
 nmap <C-p> <Action>(PreviousTab)
 nmap <C-n> <Action>(NextTab)
+nmap <C-w>V <Action>(MoveTabRight)
+
+" Bookmarks
+nmap <leader>bt <Action>(ShowBookmarks)
+nmap <leader>bl <Action>(ShowBookmarks)
+
 
 "" ========================================================
 "" Plugin Settings
 "" ========================================================
 " Which-key hints for IdeaVim
 set which-key
-" notimeout: keep multi-key mappings from timing out
 set notimeout
 let g:WhichKey_ShowVimActions = "true"
 
 " Quickscope highlights for f/F/t/T, requires IdeaVim Quickscope plugin
 " https://plugins.jetbrains.com/plugin/19417-ideavim-quickscope
-set quickscope
+" set quickscope
 
 " Sneak motions (s / S), requires IdeaVim Sneak plugin
 " https://plugins.jetbrains.com/plugin/15348-ideavim-sneak
-set sneak
+" set sneak
 
 " Highlight yanked text briefly
 set highlightedyank
 
-" https://medium.com/@dbilici/a-practical-ideavim-setup-for-intellij-idea-cf74222e7b45
+" Multiple cursors
+" https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins#multiple-cursors-extends-multicursor-support
+set multiple-cursors
+xmap <leader>n <Plug>NextWholeOccurrence
 
-" Reload IdeaVim settings: :source ~/.ideavimrc
+" NERDTree
+" https://github.com/JetBrains/ideavim/wiki/NERDTree-support
+set NERDTree
 
-" List of actions
-" https://gist.github.com/lexxish/6d629fa9b38581be3ece2a523879cfb7
+" Documentation
+" Setup guide (majority of settings were copied from it):
+"   https://medium.com/@dbilici/a-practical-ideavim-setup-for-intellij-idea-cf74222e7b45
+" Reload IdeaVim settings: 
+"   :source ~/.ideavimrc
+" List of actions: 
+"   https://gist.github.com/lexxish/6d629fa9b38581be3ece2a523879cfb7
