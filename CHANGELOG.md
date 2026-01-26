@@ -1,5 +1,37 @@
 # Changelog
 
+## [3.2.0](https://github.com/jmaver-plume/dotfiles/compare/v3.1.0...v3.2.0) (2026-01-26)
+
+
+### Features
+
+* **.ideavimrc:** improve ([55f2663](https://github.com/jmaver-plume/dotfiles/commit/55f2663c5018a0131563b7578e2c8b4eb9b2b7ba))
+* add .hushlogin file and create symlink in sync script ([4b2af48](https://github.com/jmaver-plume/dotfiles/commit/4b2af48e2e299e7e7c7d983ddfa5413291b326d7))
+* add .ideavimrc ([09cdebc](https://github.com/jmaver-plume/dotfiles/commit/09cdebc81f8209c1a30c757c6a32bd6ab44aceef))
+* add delta ([0379ae3](https://github.com/jmaver-plume/dotfiles/commit/0379ae387a1c447b7b7ab566f37f9f458252169f))
+* add fzf-tab ([c6d6598](https://github.com/jmaver-plume/dotfiles/commit/c6d6598b4d0ae6e0b43059efc2c7cc53a7df7cc7))
+* Add hurl and update ghostty theme ([6a07c58](https://github.com/jmaver-plume/dotfiles/commit/6a07c58cb2043fca6378795089a45c00686fae92))
+* add kickstart.nvim submodule and update sync script ([a060c89](https://github.com/jmaver-plume/dotfiles/commit/a060c89f064cc0672b0a79b2ba7d0dd4b7d0517b))
+* add sourcing for private work and home zsh configurations ([e7022ef](https://github.com/jmaver-plume/dotfiles/commit/e7022ef23cd49064c0adb45edcd23e61ddaeb0e1))
+* add zsh-nvm submodule ([e2a8d4b](https://github.com/jmaver-plume/dotfiles/commit/e2a8d4b2ca0e5d2c9e5385af5931e90df537d999))
+* add zsh-you-should-use plugin and update configuration files ([ae6d344](https://github.com/jmaver-plume/dotfiles/commit/ae6d344ef07e97e908ebf95e6d614470d0d2cb03))
+* **ghostty:** add unfocused pane style ([c24cbae](https://github.com/jmaver-plume/dotfiles/commit/c24cbae5a13dfdf0659b337eb839a678570190ee))
+* **ghostty:** set block cursor ([eeb78c3](https://github.com/jmaver-plume/dotfiles/commit/eeb78c30e3d41ca5167a7bee36eed9ac6f6b30d8))
+* **git:** add custom functions ([9f35faa](https://github.com/jmaver-plume/dotfiles/commit/9f35faac6ef61f993ff2b28ab8a6f63799fb7485))
+* integrate Homebrew installation and package management into sync script ([189916f](https://github.com/jmaver-plume/dotfiles/commit/189916f073494f1c47cfafb81aae0397c3948b35))
+* remove monitor control ([d802c0f](https://github.com/jmaver-plume/dotfiles/commit/d802c0fa69f114e134efdf32c09b9f7c42b9cf78))
+* Remove unused features ([ae0f195](https://github.com/jmaver-plume/dotfiles/commit/ae0f195b1f0039d7ed05b9e3273b21512e962a2f))
+* update kickstart.nvim ([400a292](https://github.com/jmaver-plume/dotfiles/commit/400a292473f034549df2c09c8157756f3c39f18d))
+* update kickstart.nvim submodule to latest commit ([87b53c4](https://github.com/jmaver-plume/dotfiles/commit/87b53c44b0cbf6ad761843c8ee08cd892ebc0df3))
+* update README to reflect changes in zsh package installation process ([8945086](https://github.com/jmaver-plume/dotfiles/commit/89450869a4d58d058b022f5fbbb4c0da7d0955a8))
+* update submodules ([d010b3f](https://github.com/jmaver-plume/dotfiles/commit/d010b3ff8312cac45c49536657d82ad014fcf150))
+* use Cappuccion ghossty theme ([ad07cfb](https://github.com/jmaver-plume/dotfiles/commit/ad07cfba6c5e540d7f40f2e0a70008475fb8f857))
+
+
+### Bug Fixes
+
+* wrong theme ([1f48c49](https://github.com/jmaver-plume/dotfiles/commit/1f48c49d36d68041851e064b9b80ade7f03c5f99))
+
 ## [3.1.0](https://github.com/jmaver-plume/dotfiles/compare/v3.0.0...v3.1.0) (2024-07-17)
 
 
