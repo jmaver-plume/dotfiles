@@ -27,10 +27,10 @@ gbranch() {
   git branch | grep \* | cut -d ' ' -f2 | tee >(pbcopy)
 }
 
-# greset
+# pgri
 # Resets the local 'integration' branch to match the remote 'origin/integration' branch.
-# Usage: greset
-greset() {
+# Usage: pgri
+pgri() {
   git fetch -a || { echo "Fetch failed, aborting"; return 1; }
   git checkout integration || { echo "Checkout failed, aborting"; return 1; }
   git reset --hard origin/integration || { echo "Reset failed, aborting"; return 1; }
@@ -64,4 +64,23 @@ grename() {
     git push origin -u "$1"
 
     echo "Branch renamed from '$current_branch' to '$1' and remote updated."
+}
+
+# pgmi
+# Merges the current feature branch into integration and pushes it.
+# Usage: pgmi
+pgmi() {
+  local feature_branch
+  feature_branch=$(git rev-parse --abbrev-ref HEAD) || { echo "Failed to get current branch"; return 1; }
+
+  # Ensure we start from a feature/* branch, per expectation.
+  if [[ "$feature_branch" != feature/* ]]; then
+    echo "Expected to be on a feature/* branch, got '$feature_branch'"
+    return 1
+  fi
+
+  pgri || return 1
+
+  git merge "$feature_branch" || { echo "Merge failed, aborting"; return 1; }
+  git push origin integration || { echo "Push failed, aborting"; return 1; }
 }
