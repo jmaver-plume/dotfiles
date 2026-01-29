@@ -32,10 +32,20 @@ plugins=(
   zsh-syntax-highlighting
   zsh-you-should-use
   fzf-tab
+  kube-ps1
 )
 
 # Source the main oh-my-zsh script.
 source $ZSH/oh-my-zsh.sh
+
+# -----------------------
+# Kubernetes Prompt
+# -----------------------
+# Show kubectl context in the prompt (requires kube-ps1 plugin).
+# Minimal kube-ps1 setup.
+KUBE_PS1_SYMBOL_ENABLE=false
+KUBE_PS1_SUFFIX=") "
+PROMPT='$(kube_ps1)'$PROMPT
 
 # -----------------------
 # Homebrew Configuration
@@ -142,3 +152,10 @@ alias k="kubectl"
 
 # google/zx aliases
 alias psync="sync-repositories.mjs --directory '/Users/jmaver/git/code/plume-repositories'"
+
+
+# Prompt
+# Add newline
+OMZ_NEW_LINE_FORMAT=$'\n ➜ '
+ZSH_THEME_GIT_PROMPT_SUFFIX+=$OMZ_NEW_LINE_FORMAT
+
