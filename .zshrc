@@ -160,4 +160,3 @@ ZSH_THEME_GIT_PROMPT_SUFFIX+=$OMZ_NEW_LINE_FORMAT
 
 ## Latex
 export PATH="/Library/TeX/texbin:$PATH"
->>>>>>> ceb4517 (feat: improve)
