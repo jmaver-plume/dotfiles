@@ -16,10 +16,18 @@ set smartcase
 " hlsearch: highlight matches after search
 set hlsearch
 
-" clipboard+=unnamed: sync with system clipboard
+" Clipboard configuration
+" sync with system clipboard
 set clipboard+=unnamed
-" clipboard+=ideaput: allow IdeaVim to use IDE clipboard integration
+" allow IdeaVim to use IDE clipboard integration
 set clipboard+=ideaput
+" Don't overwrite yank register when deleting/changing
+" nnoremap d "_d
+" nnoremap c "_c
+" nnoremap x "_x
+" vnoremap d "_d
+" vnoremap c "_c
+" vnoremap x "_x
 
 " scrolloff: keep context lines visible around the cursor
 set scrolloff=10

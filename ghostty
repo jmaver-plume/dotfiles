@@ -49,3 +49,4 @@ cursor-style = block
 shell-integration-features = no-cursor
 unfocused-split-opacity = 0.85
 unfocused-split-fill = "#1e1e1e"
+macos-option-as-alt = true
