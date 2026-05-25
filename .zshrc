@@ -153,10 +153,5 @@ alias k="kubectl"
 # google/zx aliases
 alias psync="sync-repositories.mjs --directory '/Users/jmaver/git/code/plume-repositories'"
 
-# Prompt
-# Add newline
-OMZ_NEW_LINE_FORMAT=$'\n ➜ '
-ZSH_THEME_GIT_PROMPT_SUFFIX+=$OMZ_NEW_LINE_FORMAT
-
 ## Latex
 export PATH="/Library/TeX/texbin:$PATH"
