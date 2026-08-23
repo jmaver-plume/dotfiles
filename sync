@@ -13,13 +13,20 @@ create_symlink() {
 
     [ ! -e "$source" ] && echo "Source does not exist: $source" && return 1
 
-    if [ -L "$target" ] && [ "$(readlink "$target")" = "$source" ]; then
-        echo "Already linked: $target"
-        return 0
+    if [ -L "$target" ]; then
+        if [ "$(readlink "$target")" = "$source" ]; then
+            echo "Already linked: $target"
+            return 0
+        fi
+
+        rm "$target"
+    elif [ -e "$target" ]; then
+        echo "Target already exists and is not a symlink: $target"
+        return 1
     fi
 
     mkdir -p "$(dirname "$target")"
-    ln -sf "$source" "$target"
+    ln -s "$source" "$target"
     echo "Linked: $target"
 }
 
