@@ -1,9 +1,27 @@
+source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # -----------------------
-# Oh My Zsh Configuration
+# Homebrew Configuration
 # -----------------------
 
-# Specify the path to the oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# Initialize Homebrew environment variables.
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Pure stuff
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
+autoload -U promptinit; promptinit
+prompt pure
+
+# Source: https://mijndertstuij.nl/posts/life-is-too-short-for-a-slow-terminal/
+autoload -Uz compinit
+if [[ -n ~/.zcompdump(#qNmh-24) ]]; then
+  compinit -C
+else
+  compinit
+fi
+
 
 # -----------------------
 # Zsh Autosuggestions Configuration
@@ -13,46 +31,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # Use a dimmed/gray color for suggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 
-# Set the theme for oh-my-zsh.
-# For a random theme each session, set to "random".
-# To identify the random theme loaded, use: echo $RANDOM_THEME
-# More themes: https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
-
-# Configure auto-update behavior for oh-my-zsh.
-# Uncomment one of the lines below to set the desired behavior.
-# zstyle ':omz:update' mode disabled  # Disable automatic updates
-zstyle ':omz:update' mode auto      # Enable automatic updates without prompt
-
-# Specify plugins to be loaded by oh-my-zsh.
-# Note: Excessive plugins can slow down shell startup.
-plugins=(
-  zsh-nvm
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-  zsh-you-should-use
-  fzf-tab
-  kube-ps1
-)
-
-# Source the main oh-my-zsh script.
-source $ZSH/oh-my-zsh.sh
-
-# -----------------------
-# Kubernetes Prompt
-# -----------------------
-# Show kubectl context in the prompt (requires kube-ps1 plugin).
-# Minimal kube-ps1 setup.
-KUBE_PS1_SYMBOL_ENABLE=false
-KUBE_PS1_SUFFIX=") "
-PROMPT='$(kube_ps1)'$PROMPT
-
-# -----------------------
-# Homebrew Configuration
-# -----------------------
-
-# Initialize Homebrew environment variables.
-eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # -----------------------
 # Zoxide Configuration
@@ -149,6 +127,8 @@ alias g="git"
 
 # Alias for 'kubectl' command for brevity.
 alias k="kubectl"
+
+alias ll='ls -lG'
 
 # google/zx aliases
 alias psync="sync-repositories.mjs --directory '/Users/jmaver/git/code/plume-repositories'"
