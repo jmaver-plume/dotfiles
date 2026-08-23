@@ -49,6 +49,7 @@ packages=(
   "nvim"
   "git-delta"
   "ghostty"
+  "zsh-patina"
 )
 for package in "${packages[@]}"; do
     if brew list "$package" &> /dev/null; then
@@ -75,7 +76,6 @@ create_symlink ".ideavimrc" "$HOME/.ideavimrc"
 create_symlink ".zshrc" "$HOME/.zshrc"
 create_symlink "ghostty" "$HOME/.config/ghostty/config"
 create_symlink "zsh-autosuggestions" "$HOME/.zsh/zsh-autosuggestions"
-create_symlink "zsh-syntax-highlighting" "$HOME/.zsh/zsh-syntax-highlighting"
 create_symlink "fzf-tab" "$HOME/.zsh/fzf-tab"
 create_symlink "kickstart.nvim" "$HOME/.config/nvim"
 

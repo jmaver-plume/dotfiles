@@ -1,6 +1,5 @@
 source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # -----------------------
 # Homebrew Configuration
@@ -8,6 +7,10 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Initialize Homebrew environment variables.
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# syntax highlighting
+eval "$(/opt/homebrew/bin/zsh-patina activate)"
+
 
 # Pure stuff
 fpath+=("$(brew --prefix)/share/zsh/site-functions")
