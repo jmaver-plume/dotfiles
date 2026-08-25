@@ -138,3 +138,8 @@ alias psync="sync-repositories.mjs --directory '/Users/jmaver/git/code/plume-rep
 
 ## Latex
 export PATH="/Library/TeX/texbin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+
+## LLM Stuff
+alias cl="claude --dangerously-skip-permissions"

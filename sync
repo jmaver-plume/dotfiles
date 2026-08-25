@@ -49,6 +49,7 @@ packages=(
   "nvim"
   "git-delta"
   "ghostty"
+  "pure"
   "zsh-patina"
 )
 for package in "${packages[@]}"; do
