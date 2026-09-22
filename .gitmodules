@@ -1,9 +1,6 @@
 [submodule "zsh-autosuggestions"]
 	path = zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
-[submodule "zsh-nvm"]
-	path = zsh-nvm
-	url = https://github.com/lukechilds/zsh-nvm.git
 [submodule "kickstart.nvim"]
 	path = kickstart.nvim
 	url = git@github.com:jmaver-plume/kickstart.nvim.git

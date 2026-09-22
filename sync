@@ -1,77 +1,68 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-set -e
+set -Eeuo pipefail
 
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# Create symbolic link
 create_symlink() {
     local source="$1"
     local target="$2"
 
     [[ "$source" != /* ]] && source="$DOTFILES_DIR/$source"
 
-    [ ! -e "$source" ] && echo "Source does not exist: $source" && return 1
+    if [[ ! -e "$source" ]]; then
+        echo "Source does not exist: $source" >&2
+        return 1
+    fi
 
-    if [ -L "$target" ]; then
-        if [ "$(readlink "$target")" = "$source" ]; then
+    if [[ -L "$target" ]]; then
+        if [[ "$(readlink "$target")" == "$source" ]]; then
             echo "Already linked: $target"
             return 0
         fi
 
         rm "$target"
-    elif [ -e "$target" ]; then
-        echo "Target already exists and is not a symlink: $target"
+    elif [[ -e "$target" ]]; then
+        echo "Target already exists and is not a symlink: $target" >&2
         return 1
     fi
 
     mkdir -p "$(dirname "$target")"
     ln -s "$source" "$target"
-    echo "Linked: $target"
+    echo "Linked: $target -> $source"
 }
 
-# Install Homebrew if not installed
-if ! command -v brew &> /dev/null; then
+configure_git() {
+    local config_file="$DOTFILES_DIR/gitconfig"
+
+    if git config --global --get-all include.path 2>/dev/null | grep -Fqx "$config_file"; then
+        echo "Already configured: Git defaults"
+    else
+        git config --global --add include.path "$config_file"
+        echo "Configured Git to include: $config_file"
+    fi
+}
+
+if ! command -v brew >/dev/null 2>&1; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    echo "Installed: homebrew"
-else
-    echo "Already installed: homebrew"
 fi
 
-# Install Homebrew packages
-packages=(
-  "jq"
-  "fzf"
-  "zoxide"
-  "ripgrep"
-  "tldr"
-  "wget"
-  "nvim"
-  "git-delta"
-  "ghostty"
-  "pure"
-  "zsh-patina"
-)
-for package in "${packages[@]}"; do
-    if brew list "$package" &> /dev/null; then
-        echo "Already installed: $package"
-        continue
-    fi
+if command -v brew >/dev/null 2>&1; then
+    BREW_BIN="$(command -v brew)"
+elif [[ -x /opt/homebrew/bin/brew ]]; then
+    BREW_BIN=/opt/homebrew/bin/brew
+elif [[ -x /usr/local/bin/brew ]]; then
+    BREW_BIN=/usr/local/bin/brew
+else
+    echo "Homebrew was not found after installation." >&2
+    exit 1
+fi
 
-    # Install the package
-    brew install "$package" && echo "Installed: $package"
+eval "$("$BREW_BIN" shellenv)"
+brew bundle install --no-upgrade --file="$DOTFILES_DIR/Brewfile"
+git -C "$DOTFILES_DIR" submodule update --init --recursive -- \
+    fzf-tab kickstart.nvim zsh-autosuggestions
 
-    # Additional setup for specific packages
-    if [[ "$package" == "fzf" ]]; then
-      $(brew --prefix)/opt/fzf/install
-    fi
-done
-
-# Update git submodules
-git submodule update --init --recursive
-echo "Updated: git submodules"
-
-# Create symbolic links
 create_symlink ".hushlogin" "$HOME/.hushlogin"
 create_symlink ".ideavimrc" "$HOME/.ideavimrc"
 create_symlink ".zshrc" "$HOME/.zshrc"
@@ -79,5 +70,6 @@ create_symlink "ghostty" "$HOME/.config/ghostty/config"
 create_symlink "zsh-autosuggestions" "$HOME/.zsh/zsh-autosuggestions"
 create_symlink "fzf-tab" "$HOME/.zsh/fzf-tab"
 create_symlink "kickstart.nvim" "$HOME/.config/nvim"
+configure_git
 
 echo "Done!"

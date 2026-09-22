@@ -1,0 +1,13 @@
+[push]
+	autoSetupRemote = true
+[core]
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	side-by-side = true
+	hunk-header-style = raw
+	hunk-header-decoration-style = ul
+[merge]
+	conflictStyle = zdiff3
